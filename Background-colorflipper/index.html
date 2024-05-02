@@ -10,26 +10,46 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <style>
-            body{
-                background-color: black;
-                color: #ffffff;
-                font-family: 'Courier New', Courier, monospace;
-                font-weight: 100;
-            }
-        </style>
+        <link rel="stylesheet" href="index.css">
+    
     </head>
     <body>
-        <h1>Background Flipper</h1>
-        <button id="button-el">Flip color</button>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum placeat cum optio quisquam ullam maiores nobis ipsa quidem amet nam voluptas eaque vel itaque voluptatem modi molestias molestiae, nesciunt animi!</p>
+        <div class="navhead">
+            <h3>Color flipper</h3>
+            <h3> <a href="simplehex.html">Simple Hex</a></h3>
+        </div>
+    
+           <div class="display">
+            <h2>Background Flipper</h2>
+            <p id="current-color"></p> 
+            <button id="button-el" class="button-23" >Flip color</button>
+           </div>
+            
         
-        <script src="" async defer>
-            let buttonEl = document.getElementById("button-el")
+        <p id="p-el">We are all equal in the fact that we are all different. We are all the same in the fact that we will never be the same. We are united by the reality that all colours and all cultures are distinct & individual. We are harmonious in the reality that we are all held to this earth by the same gravity. We don't share blood, but we share the air that keeps us alive. I will not blind myself and say that my black brother is not different from me. I will not blind myself and say that my brown sister is not different from me. But my black brother is he as much as I am me. But my brown sister is she as much as I am me.”</p>
+        
+        
+        <script>
+            let buttonEl = document.getElementById("button-el");
+            let pEl = document.getElementById("p-el")
+            let currentColor = document.getElementById ("current-color")
+            // let bodyEl = document.querySelector("body")
+            let arrayColor = ["blue", "red", "yellow", "green"]
+       
+             function getrandomnumber(){
+                return Math.floor(Math.random()*arrayColor.length)
+             }
+            
             buttonEl.addEventListener("click" , function(){
-                let bodyEl = document.querySelector(body).style.color = "blue"
-            })
+                let gtr = getrandomnumber()
+                document.body.style.backgroundColor= arrayColor[gtr]
+                if ( gtr === 2) {    
+                     pEl.style.color = "black"
+                } else  {
+                    pEl.style.color = "white"
+                }
+                currentColor.textContent = arrayColor[gtr]
+            }); 
         </script>
     </body>
 </html>
