@@ -21,6 +21,7 @@
 
         <div class="display">
             <h2>Background Flipper</h2>
+            <p id="curentColor"></p>
             <button id="hexbutton" class="button-23" >Flip color</button>
         </div>
        
@@ -28,17 +29,31 @@
         <p id="p-el">We are all equal in the fact that we are all different. We are all the same in the fact that we will never be the same. We are united by the reality that all colours and all cultures are distinct & individual. We are harmonious in the reality that we are all held to this earth by the same gravity. We don't share blood, but we share the air that keeps us alive. I will not blind myself and say that my black brother is not different from me. I will not blind myself and say that my brown sister is not different from me. But my black brother is he as much as I am me. But my brown sister is she as much as I am me.”</p>
         
         <script>
-            let hexColor = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
-            let hexbuttonEl = document.getElementById("hexbutton")
+            const hexColor = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+            const hexbuttonEl = document.getElementById("hexbutton")
+            const currentColor = document.getElementById ("currentColor")
 
-            function gethexRandomnumber (){
+
+            hexbuttonEl.addEventListener("click",function(){
+                let simplehexColor = "#"
+
+                for(let i= 0 ; i <6 ; i++){
+                 simplehexColor += hexColor[gethexRandomnumber()]
+                 console.log(simplehexColor)
+                }
+                document.body.style.backgroundColor = simplehexColor
+                currentColor.textContent = simplehexColor
+
+
+                function gethexRandomnumber (){
                 return Math.floor(Math.random()*hexColor.length)
-            }
-            let gethexRandom = gethexRandomnumber()
-            hexbuttonEl.addEventListener()
+                }
+           
+                
+            })
 
        
-
+           
         </script>
     </body>
 </html>
